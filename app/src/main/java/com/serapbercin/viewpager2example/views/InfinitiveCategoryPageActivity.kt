@@ -18,13 +18,13 @@ class InfinitiveCategoryPageActivity : AppCompatActivity() {
 
         val list: MutableList<Category> = mutableListOf()
 
-        list.add(Category(1, "Your Recording"))
+        list.add(Category(1, "First Item - Fake"))
         list.add(Category(1, "Your Recording"))
         list.add(Category(2, "Film"))
         list.add(Category(3, "Series"))
         list.add(Category(4, "Kids"))
         list.add(Category(5, "Sport"))
-        list.add(Category(5, "Sport"))
+        list.add(Category(5, "Last Item - Fake"))
 
         val adapter = CategoryAdapter()
         viewPager2.adapter = adapter
