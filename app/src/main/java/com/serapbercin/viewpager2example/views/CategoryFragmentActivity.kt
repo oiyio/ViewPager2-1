@@ -23,7 +23,7 @@ class CategoryFragmentActivity : FragmentActivity() {
         CategoryViewPagerAdapter(this)
 }
 
-class PageAdapter : Fragment() {
+class MyFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,6 +34,6 @@ class PageAdapter : Fragment() {
     }
 
     companion object {
-        fun instance() = PageAdapter()
+        fun instance() = MyFragment()
     }
 }
