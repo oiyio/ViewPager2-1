@@ -19,9 +19,9 @@ class MainActivity : ListActivity() {
         super.onCreate(savedInstanceState)
 
         listAdapter = SimpleAdapter(
-            this, getData(),
-            R.layout.simple_list_item_1, arrayOf("title"),
-            intArrayOf(R.id.text1)
+                this, getData(),
+                R.layout.simple_list_item_1, arrayOf("title"),
+                intArrayOf(R.id.text1)
         )
     }
 
@@ -29,80 +29,80 @@ class MainActivity : ListActivity() {
         val data = mutableListOf<Map<String, Any>>()
 
         data.add(
-            mapOf(
-                "title" to "HORIZONTAL ViewPager2",
-                "intent" to activityToIntent(
-                    CategoryActivity::class.java.name
+                mapOf(
+                        "title" to "HORIZONTAL ViewPager2 - CategoryActivity",
+                        "intent" to activityToIntent(
+                                CategoryActivity::class.java.name
+                        )
                 )
-            )
         )
         data.add(
-            mapOf(
-                "title" to "VERTICAL ViewPager2",
-                "intent" to activityToIntent(
-                    CategoryActivity::class.java.name,
-                    ORIENTATION_VERTICAL
+                mapOf(
+                        "title" to "VERTICAL ViewPager2 - CategoryActivity",
+                        "intent" to activityToIntent(
+                                CategoryActivity::class.java.name,
+                                ORIENTATION_VERTICAL
+                        )
                 )
-            )
-        )
-
-        data.add(
-            mapOf(
-                "title" to "Show Multiple Pages In ViewPager2",
-                "intent" to activityToIntent(
-                    MultipleCategoriesPageActivity::class.java.name
-                )
-            )
         )
 
         data.add(
-            mapOf(
-                "title" to "PageTransformer In ViewPager2",
-                "intent" to activityToIntent(
-                    PageTransformerCategoryActivity::class.java.name
+                mapOf(
+                        "title" to "Show Multiple Pages In ViewPager2 - MultipleCategoriesPageActivity",
+                        "intent" to activityToIntent(
+                                MultipleCategoriesPageActivity::class.java.name
+                        )
                 )
-            )
         )
 
         data.add(
-            mapOf(
-                "title" to "Endless Scroll Page In ViewPager2",
-                "intent" to activityToIntent(
-                    InfinitiveCategoryPageActivity::class.java.name
+                mapOf(
+                        "title" to "PageTransformer In ViewPager2 - PageTransformerCategoryActivity",
+                        "intent" to activityToIntent(
+                                PageTransformerCategoryActivity::class.java.name
+                        )
                 )
-            )
         )
 
         data.add(
-            mapOf(
-                "title" to "Diff Util Using In ViewPager2",
-                "intent" to activityToIntent(
-                    DiffCategoriesActivity::class.java.name
+                mapOf(
+                        "title" to "Endless Scroll Page In ViewPager2 - InfinitiveCategoryPageActivity",
+                        "intent" to activityToIntent(
+                                InfinitiveCategoryPageActivity::class.java.name
+                        )
                 )
-            )
+        )
+
+        data.add(
+                mapOf(
+                        "title" to "Diff Util Using In ViewPager2 - DiffCategoriesActivity",
+                        "intent" to activityToIntent(
+                                DiffCategoriesActivity::class.java.name
+                        )
+                )
         )
 
 
 
         data.add(
-            mapOf(
-                "title" to "Fragment State Adapter In ViewPager2",
-                "intent" to activityToIntent(
-                    CategoryFragmentActivity::class.java.name
+                mapOf(
+                        "title" to "Fragment State Adapter In ViewPager2 - CategoryFragmentActivity",
+                        "intent" to activityToIntent(
+                                CategoryFragmentActivity::class.java.name
+                        )
                 )
-            )
         )
         return data
     }
 
     private fun activityToIntent(
-        activity: String,
-        orientation: String = ORIENTATION_HORIZONTAL
+            activity: String,
+            orientation: String = ORIENTATION_HORIZONTAL
     ): Intent =
-        Intent(Intent.ACTION_VIEW).setClassName(
-            this.packageName,
-            activity
-        ).putExtra(ORIENTATION_TYPE, orientation)
+            Intent(Intent.ACTION_VIEW).setClassName(
+                    this.packageName,
+                    activity
+            ).putExtra(ORIENTATION_TYPE, orientation)
 
     override fun onListItemClick(listView: ListView, view: View, position: Int, id: Long) {
         val map = listView.getItemAtPosition(position) as Map<*, *>
